@@ -1,0 +1,42 @@
+#include<stdio.h>
+int bilangan_masuk;
+int main(){
+   scanf("%d", &bilangan_masuk);
+   //identify satuan, puluhan, ribuan
+   int satuan_awal = bilangan_masuk % 10;
+   int puluhan_awal = bilangan_masuk % 100 / 10;
+   int ratusan_awal = bilangan_masuk / 100;
+
+   int i = 0;
+   int j = 10;
+   int satuan_akhir = 1;
+   int puluhan_akhir = 1;
+   int ratusan_akhir = 1;
+   int s = 0; //untuk memberhentikan program if terakhir
+   int l = 1; //untuk memberhentikan program while
+    
+   while (i < j && l == 1){  //program pencarian angka
+       //pembuatan pangkat
+       satuan_akhir = satuan_awal * satuan_akhir;
+       puluhan_akhir = puluhan_awal * puluhan_akhir;
+       ratusan_akhir = ratusan_awal * ratusan_akhir;
+
+       
+       i = i + 1;
+       
+       if(satuan_akhir + puluhan_akhir + ratusan_akhir == bilangan_masuk){
+         printf("Merupakan Bilangan Armstrong");
+         s += 1; //memberhentikan program if
+         l += 1; //memberhentikan program while
+
+       }
+       
+
+      }
+      if(s != 1){
+         printf("Bukan bilangan Armstrong");
+      }
+   
+   
+      
+}
